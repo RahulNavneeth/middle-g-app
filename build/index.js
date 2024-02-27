@@ -18,13 +18,14 @@ const API_1 = require("./API");
 const dotenv_1 = __importDefault(require("dotenv"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
+const types_1 = require("./types");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)(), body_parser_1.default.json());
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
 const CALL = new API_1.G_API(process.env.G_TOKEN || "");
 app.get('/', (_, res) => {
-    res.send('HEY THERE, HEAD TO www.cittakshashila.in : )');
+    res.send(`HEY THERE, HEAD TO www.cittakshashila.in :) [META: ${types_1.REPO_OWNER}/${types_1.REPO_NAME}]`);
 });
 app.put('/PUT', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = req.body;
