@@ -4,6 +4,7 @@ import { G_API } from './API';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import { REPO_NAME, REPO_OWNER } from './types';
 dotenv.config();
 
 const app = express();
@@ -15,7 +16,7 @@ const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
 const CALL = new G_API(process.env.G_TOKEN || "");
 
 app.get('/', (_, res) => {
-    res.send('HEY THERE, HEAD TO www.cittakshashila.in : )');
+    res.send(`HEY THERE, HEAD TO www.cittakshashila.in :) [META: ${REPO_OWNER}/${REPO_NAME}]`);
 })
 
 app.put('/PUT', async (req, res) => {

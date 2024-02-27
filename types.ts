@@ -1,5 +1,5 @@
-export const REPO_OWNER = "RahulNavneeth";
-export const REPO_NAME = "EVENTS-DATA-24-TEST";
+export const REPO_OWNER = "cittakshashila";
+export const REPO_NAME = "EVENTS-DATA-24";
 
 export type API_TYPE = {
     success: boolean;
